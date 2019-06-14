@@ -4,7 +4,25 @@
 rows, cols = 2, 3
 
 class GameState:
-
+    """
+    Attributes
+    ----------
+    _board: list(list)
+        Represent the board with a 2d array _board[x][y]
+        where open spaces are 0 and closed spaces are 1
+    
+    _parity: bool
+        Keep track of active player initiative (which
+        player has control to move) where 0 indicates that
+        player one has initiative and 1 indicates player 2
+    
+    _player_locations: list(tuple)
+        Keep track of the current location of each player
+        on the board where position is encoded by the
+        board indices of their last move, e.g., [(0, 0), (1, 0)]
+        means player 1 is at (0, 0) and player 2 is at (1, 0)
+    TODO: Copy in your implementation from the previous quiz
+    """
     def __init__(self):
         """The GameState class constructor performs required
         initializations when an instance is created. The class
