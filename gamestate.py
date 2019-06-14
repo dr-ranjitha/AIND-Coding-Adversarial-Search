@@ -1,6 +1,7 @@
 
 # TODO: implement the __init__ class below by adding properties
 # that meet the three requirements specified
+rows, cols = 2, 3
 
 class GameState:
 
@@ -29,6 +30,11 @@ class GameState:
         # self.value = "some string"
         # self.foo = []  # create an empty list
         #raise NotImplementedError
+        self.board = [[0] * cols for r in range(rows)] #[0, for x in range(xlim) for y in range(ylim)]
+        print([[0] * cols for r in range(rows)])
+        self.board[-1][-1] = 1
+        self._parity = 0
+        self._player_locations = [None, None]
 
 if __name__ == "__main__":
     # This code is only executed if "gameagent.py" is the run
