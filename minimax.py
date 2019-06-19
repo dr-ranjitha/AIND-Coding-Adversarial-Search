@@ -1,3 +1,19 @@
+# TODO: Implement the my_moves() function
+# TODO: Change the value returned when the depth cutoff is
+#       reached to call and return the score from my_moves()
+
+# Use the player_id when you call "my_moves()"
+# DO NOT MODIFY THE PLAYER ID
+player_id = 0
+
+def my_moves(gameState):
+    # TODO: Finish this function!
+    # HINT: the global player_id variable is accessible inside
+    #       this function scope
+    #raise NotImplementedError
+    loc = gameState._player_locations[player_id]
+    return len(gameState.liberties(loc))
+    
 def minimax_decision(gameState, depth):
     """ Return the move along a branch of the game tree that
     has the best possible value.  A move is a pair of coordinates
@@ -37,7 +53,7 @@ def max_value(gameState, depth):
         return gameState.utility(0)
     
     if depth <= 0:  #Check if the depth limit is reached
-        return 0
+        return my_moves(gameState)
     
     v = float("-inf")
     for a in gameState.actions():
@@ -62,7 +78,7 @@ def min_value(gameState, depth):
         return gameState.utility(0)
     
     if depth <= 0:  #Check if the depth limit is reached
-        return 0
+        return my_moves(gameState)
     
     v = float("inf")
     for a in gameState.actions():
